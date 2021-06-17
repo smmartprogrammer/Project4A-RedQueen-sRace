@@ -28,4 +28,26 @@ var sceneryTimingBackground = {
     var foreground1 = document.getElementById('foreground1');
     var foreground2 = document.getElementById('foreground2');
 
+    var foreground1Movement = foreground1.animate(
+        sceneryFrames, sceneryTimingForeground);
+        foreground1Movement.currentTime = foreground1Movement.effect.timing.duration / 2;
+
+        var foreground2Movement = foreground2.animate(
+            sceneryFrames, sceneryTimingForeground);
+
+            var spriteFrames = [
+                { transform: 'translateY(0)' },
+                { transform: 'translateY(-100%)' }   
+              ];
+              
+              var redQueen_alice_sprite = document.getElementById('red-queen_and_alice_sprite');
+              
+              var redQueen_alice = redQueen_alice_sprite.animate(
+              spriteFrames, {
+                easing: 'steps(7, end)',
+                direction: "reverse",
+                duration: 600,
+                playbackRate: 1,
+                iterations: Infinity
+              });
     
